@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28450B5F2ADC572200277BFC /* lcd14.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28450B5E2ADC572200277BFC /* lcd14.otf */; };
+		28450B612ADC5D9A00277BFC /* DigitaldreamNarrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28450B602ADC5D9900277BFC /* DigitaldreamNarrow.ttf */; };
 		28BCAD1E2AC62AFA0011EAE2 /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD1D2AC62AFA0011EAE2 /* TimerApp.swift */; };
 		28BCAD202AC62AFA0011EAE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD1F2AC62AFA0011EAE2 /* ContentView.swift */; };
 		28BCAD222AC62AFC0011EAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BCAD212AC62AFC0011EAE2 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		28450B5E2ADC572200277BFC /* lcd14.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcd14.otf; sourceTree = "<group>"; };
+		28450B602ADC5D9900277BFC /* DigitaldreamNarrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DigitaldreamNarrow.ttf; sourceTree = "<group>"; };
 		28BCAD1A2AC62AFA0011EAE2 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BCAD1D2AC62AFA0011EAE2 /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
 		28BCAD1F2AC62AFA0011EAE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		28BCAD622AD8C12B0011EAE2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				28450B602ADC5D9900277BFC /* DigitaldreamNarrow.ttf */,
 				28450B5E2ADC572200277BFC /* lcd14.otf */,
 				28BCAD632AD8C1440011EAE2 /* LCDMonoNormal.ttf */,
 			);
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28450B5F2ADC572200277BFC /* lcd14.otf in Resources */,
+				28450B612ADC5D9A00277BFC /* DigitaldreamNarrow.ttf in Resources */,
 				28BCAD252AC62AFC0011EAE2 /* Preview Assets.xcassets in Resources */,
 				28BCAD642AD8C2230011EAE2 /* LCDMonoNormal.ttf in Resources */,
 				28BCAD222AC62AFC0011EAE2 /* Assets.xcassets in Resources */,
