@@ -10,7 +10,7 @@ import Foundation
 struct TimerHelper {
     static func formatDisplayStringForSeconds(_ time: TimeInterval) -> String {
         let formatter = DateComponentsFormatter()
-        if (time > 3600) {
+        if (time >= 3600) {
             formatter.allowedUnits = [.hour, .minute, .second]
         } else {
             formatter.allowedUnits = [.minute, .second]

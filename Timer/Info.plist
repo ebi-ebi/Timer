@@ -4,7 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/LCDMN.ttf</string>
+		<string>lcd14.otf</string>
+		<string>LCDMonoNormal.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28450B5F2ADC572200277BFC /* lcd14.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28450B5E2ADC572200277BFC /* lcd14.otf */; };
 		28BCAD1E2AC62AFA0011EAE2 /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD1D2AC62AFA0011EAE2 /* TimerApp.swift */; };
 		28BCAD202AC62AFA0011EAE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD1F2AC62AFA0011EAE2 /* ContentView.swift */; };
 		28BCAD222AC62AFC0011EAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BCAD212AC62AFC0011EAE2 /* Assets.xcassets */; };
@@ -23,7 +24,7 @@
 		28BCAD562ACF7E850011EAE2 /* TimerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD552ACF7E850011EAE2 /* TimerSession.swift */; };
 		28BCAD5C2ACF828C0011EAE2 /* TimerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD5B2ACF828C0011EAE2 /* TimerEditView.swift */; };
 		28BCAD5F2AD088380011EAE2 /* TimerNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD5E2AD088380011EAE2 /* TimerNotificationManager.swift */; };
-		28BCAD642AD8C2230011EAE2 /* LCDMN.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 28BCAD632AD8C1440011EAE2 /* LCDMN.TTF */; };
+		28BCAD642AD8C2230011EAE2 /* LCDMonoNormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BCAD632AD8C1440011EAE2 /* LCDMonoNormal.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28450B5E2ADC572200277BFC /* lcd14.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcd14.otf; sourceTree = "<group>"; };
 		28BCAD1A2AC62AFA0011EAE2 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BCAD1D2AC62AFA0011EAE2 /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
 		28BCAD1F2AC62AFA0011EAE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		28BCAD552ACF7E850011EAE2 /* TimerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSession.swift; sourceTree = "<group>"; };
 		28BCAD5B2ACF828C0011EAE2 /* TimerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEditView.swift; sourceTree = "<group>"; };
 		28BCAD5E2AD088380011EAE2 /* TimerNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationManager.swift; sourceTree = "<group>"; };
-		28BCAD632AD8C1440011EAE2 /* LCDMN.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = LCDMN.TTF; sourceTree = "<group>"; };
+		28BCAD632AD8C1440011EAE2 /* LCDMonoNormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LCDMonoNormal.ttf; sourceTree = "<group>"; };
 		28BCAD652AD8C2B90011EAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,7 +196,8 @@
 		28BCAD622AD8C12B0011EAE2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				28BCAD632AD8C1440011EAE2 /* LCDMN.TTF */,
+				28450B5E2ADC572200277BFC /* lcd14.otf */,
+				28BCAD632AD8C1440011EAE2 /* LCDMonoNormal.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -263,7 +266,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					28BCAD192AC62AFA0011EAE2 = {
 						CreatedOnToolsVersion = 14.1;
@@ -303,8 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28450B5F2ADC572200277BFC /* lcd14.otf in Resources */,
 				28BCAD252AC62AFC0011EAE2 /* Preview Assets.xcassets in Resources */,
-				28BCAD642AD8C2230011EAE2 /* LCDMN.TTF in Resources */,
+				28BCAD642AD8C2230011EAE2 /* LCDMonoNormal.ttf in Resources */,
 				28BCAD222AC62AFC0011EAE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +417,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -473,6 +478,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

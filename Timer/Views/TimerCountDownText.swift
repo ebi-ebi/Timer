@@ -13,11 +13,9 @@ struct TimerCountDownText: View {
     var body: some View {
         HStack(alignment: .top) {
             Text(viewModel.displayString)
-                .font(.largeTitle)
-                .monospaced()
+                .font(Font.custom("lcd14", size: 50, relativeTo: .largeTitle))
             Text(viewModel.subSecondDisplayString)
-                .font(.title3)
-                .monospaced()
+                .font(Font.custom("lcd14", size: 30, relativeTo: .title3))
         }
     }
 }
