@@ -50,8 +50,6 @@ struct TimerSessionView: View {
     }
 }
 
-struct TimerSessionView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerSessionView()
-    }
+#Preview {
+    TimerSessionView()
 }

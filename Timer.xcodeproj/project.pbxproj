@@ -26,6 +26,8 @@
 		28BCAD5C2ACF828C0011EAE2 /* TimerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD5B2ACF828C0011EAE2 /* TimerEditView.swift */; };
 		28BCAD5F2AD088380011EAE2 /* TimerNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD5E2AD088380011EAE2 /* TimerNotificationManager.swift */; };
 		28BCAD642AD8C2230011EAE2 /* LCDMonoNormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BCAD632AD8C1440011EAE2 /* LCDMonoNormal.ttf */; };
+		28C2A8952ADDD532004A9462 /* TimerListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2A8942ADDD532004A9462 /* TimerListItemView.swift */; };
+		28C2A8972ADDD612004A9462 /* TimerListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2A8962ADDD612004A9462 /* TimerListItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		28BCAD5E2AD088380011EAE2 /* TimerNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationManager.swift; sourceTree = "<group>"; };
 		28BCAD632AD8C1440011EAE2 /* LCDMonoNormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LCDMonoNormal.ttf; sourceTree = "<group>"; };
 		28BCAD652AD8C2B90011EAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		28C2A8942ADDD532004A9462 /* TimerListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListItemView.swift; sourceTree = "<group>"; };
+		28C2A8962ADDD612004A9462 /* TimerListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 			children = (
 				28BCAD512ACF7DB80011EAE2 /* TimerViewModel.swift */,
 				28BCAD552ACF7E850011EAE2 /* TimerSession.swift */,
+				28C2A8962ADDD612004A9462 /* TimerListItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				28BCAD4E2ACD1DBC0011EAE2 /* TimerListView.swift */,
 				28BCAD4C2ACCE9B20011EAE2 /* TimerSessionView.swift */,
 				28BCAD5B2ACF828C0011EAE2 /* TimerEditView.swift */,
+				28C2A8942ADDD532004A9462 /* TimerListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,12 +346,14 @@
 			files = (
 				28BCAD562ACF7E850011EAE2 /* TimerSession.swift in Sources */,
 				28BCAD522ACF7DB80011EAE2 /* TimerViewModel.swift in Sources */,
+				28C2A8952ADDD532004A9462 /* TimerListItemView.swift in Sources */,
 				28BCAD5C2ACF828C0011EAE2 /* TimerEditView.swift in Sources */,
 				28BCAD4D2ACCE9B20011EAE2 /* TimerSessionView.swift in Sources */,
 				28BCAD492AC641110011EAE2 /* TimerConfig.swift in Sources */,
 				28BCAD4F2ACD1DBC0011EAE2 /* TimerListView.swift in Sources */,
 				28BCAD202AC62AFA0011EAE2 /* ContentView.swift in Sources */,
 				28BCAD542ACF7DD70011EAE2 /* TimerHelper.swift in Sources */,
+				28C2A8972ADDD612004A9462 /* TimerListItemViewModel.swift in Sources */,
 				28BCAD5F2AD088380011EAE2 /* TimerNotificationManager.swift in Sources */,
 				28BCAD4B2ACB86400011EAE2 /* TimerCountDownText.swift in Sources */,
 				28BCAD1E2AC62AFA0011EAE2 /* TimerApp.swift in Sources */,

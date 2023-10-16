@@ -20,10 +20,6 @@ struct TimerCountDownText: View {
     }
 }
 
-struct TimerCountDownText_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            TimerCountDownText(viewModel: TimerViewModel())
-        }
-    }
+#Preview {
+    TimerCountDownText(viewModel: TimerViewModel())
 }

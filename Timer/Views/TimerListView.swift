@@ -25,14 +25,12 @@ struct TimerListView: View {
             NavigationLink {
                 TimerSessionView(timerConfig: timerConfig)
             } label: {
-                TimerCountDownText(viewModel: TimerViewModel(timerConfig: timerConfig))
+                TimerListItemView(viewModel: TimerListItemViewModel(timerConfig: timerConfig))
             }
         }
     }
 }
 
-struct TimerListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerListView()
-    }
+#Preview {
+    TimerListView()
 }

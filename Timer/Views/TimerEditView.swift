@@ -64,8 +64,6 @@ struct TimerEditView: View {
     }
 }
 
-struct TimerEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerEditView()
-    }
+#Preview {
+    TimerEditView()
 }
