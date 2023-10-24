@@ -106,6 +106,8 @@ class TimerViewModel: ObservableObject {
         timerSession?.pause()
 
         stopUpdate()
+        
+        TimerNotificationManager.currentManager().cancelNotification()
     }
 
     func resumeTimer() {
