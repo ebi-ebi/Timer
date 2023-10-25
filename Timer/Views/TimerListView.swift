@@ -21,13 +21,13 @@ struct TimerListView: View {
     ]
     
     var body: some View {
-        List(timerConfigs, id: \.self) { timerConfig in
+        List(TimerHelper.getQuickTimeOptions(), id: \.self) { timerConfig in
             NavigationLink {
                 TimerSessionView(timerConfig: timerConfig)
             } label: {
                 TimerListItemView(viewModel: TimerListItemViewModel(timerConfig: timerConfig))
             }
-        }
+        }.frame(maxHeight: 300)
     }
 }
 
