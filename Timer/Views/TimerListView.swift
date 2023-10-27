@@ -8,29 +8,25 @@
 import SwiftUI
 
 struct TimerListView: View {
-    let timerConfigs = [
-        TimerConfig(time: 60),
-        TimerConfig(time: 120),
-        TimerConfig(time: 180),
-        TimerConfig(time: 300),
-        TimerConfig(time: 600),
-        TimerConfig(time: 900),
-        TimerConfig(time: 1800),
-        TimerConfig(time: 2700),
-        TimerConfig(time: 3600)
-    ]
+    @EnvironmentObject var timerViewModel: TimerViewModel
     
+    func timerSessionView(timerConfig: TimerConfig) -> some View {
+        return TimerSessionView(timerConfig: timerConfig)
+            .environmentObject(timerViewModel)
+    }
+
     var body: some View {
         List(TimerHelper.getQuickTimeOptions(), id: \.self) { timerConfig in
             NavigationLink {
-                TimerSessionView(timerConfig: timerConfig)
+                timerSessionView(timerConfig: timerConfig)
             } label: {
                 TimerListItemView(viewModel: TimerListItemViewModel(timerConfig: timerConfig))
             }
-        }.frame(maxHeight: 300)
+        }
     }
 }
 
 #Preview {
     TimerListView()
+        .environmentObject(TimerViewModel())
 }

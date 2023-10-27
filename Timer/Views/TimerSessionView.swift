@@ -8,48 +8,54 @@
 import SwiftUI
 
 struct TimerSessionView: View {
-    @ObservedObject var viewModel: TimerViewModel
+    @EnvironmentObject var timerViewModel: TimerViewModel
+    let timerConfig: TimerConfig?
     
     init() {
-        self.init(timerConfig: TimerConfig(time: 10))
+        self.timerConfig = nil
     }
     
+    // Use this intializer to update timerViewModel config onAppear
     init(timerConfig: TimerConfig) {
-        viewModel = TimerViewModel(timerConfig: timerConfig)
+        self.timerConfig = timerConfig
     }
-    
+
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             LinearGradient(gradient: Gradient(colors: [.gray, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                .opacity(viewModel.timerEnded ? 1 : 0)
-                .animation(.linear.repeatCount(viewModel.timerEnded ? 3 : 1), value: viewModel.timerEnded)
+                .opacity(timerViewModel.timerEnded ? 1 : 0)
+                .animation(.linear.repeatCount(timerViewModel.timerEnded ? 3 : 1), value: timerViewModel.timerEnded)
                 .ignoresSafeArea()
             VStack {
-                TimerCountDownText(viewModel: viewModel)
+                TimerCountDownText(viewModel: timerViewModel)
                 HStack {
                     Button(action:{
-                        viewModel.toggleTimer()
+                        timerViewModel.toggleTimer()
                     }) {
-                        Text(viewModel.toggleString)
+                        Text(timerViewModel.toggleString)
                     }
                     .buttonStyle(.borderedProminent)
                     .padding()
                     Button(action:{
-                        viewModel.resetTimer()
+                        timerViewModel.resetTimer()
                     }) {
-                        Text(viewModel.resetString)
+                        Text(timerViewModel.resetString)
                     }
                     .buttonStyle(.bordered)
                     .padding()
                 }
                 .padding()
             }
+        }.onAppear {
+            if let timerConfig = timerConfig {
+                timerViewModel.updateTimerConfig(timerConfig: timerConfig)
+            }
         }
     }
 }
 
 #Preview {
-    TimerSessionView()
+    TimerSessionView().environmentObject(TimerViewModel(timerConfig: TimerConfig(time: 10)))
 }

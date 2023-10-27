@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TimerEditView: View {
+    @EnvironmentObject var timerViewModel: TimerViewModel
+    
     @State var pickedHours: Int = 0
     @State var pickedMinutes: Int = 1
     @State var pickedSeconds: Int = 0
@@ -20,6 +22,11 @@ struct TimerEditView: View {
         if duration() == 0 {
             pickedMinutes = 1
         }
+    }
+    
+    func timerSessionView() -> some View {
+        return TimerSessionView(timerConfig: TimerConfig(time:duration()))
+            .environmentObject(timerViewModel)
     }
     
     var body: some View {
@@ -56,8 +63,7 @@ struct TimerEditView: View {
                 }
                 .pickerStyle(.wheel)
             }
-            NavigationLink(destination: TimerSessionView(timerConfig: TimerConfig(time: self.duration()))
-            ) {
+            NavigationLink(destination: timerSessionView()) {
                 Text("Go")
             }
         }
@@ -66,4 +72,5 @@ struct TimerEditView: View {
 
 #Preview {
     TimerEditView()
+        .environmentObject(TimerViewModel())
 }

@@ -17,12 +17,12 @@ class TimerViewModel: ObservableObject {
     // This flips only when the timer ends
     @Published var timerEnded: Bool = false
     
-    var timerConfig: TimerConfig
+    var timerConfig: TimerConfig?
     var timerSession: TimerSession?
     var updateTimer: Timer? = nil
     
-    convenience init() {
-        self.init(timerConfig: TimerConfig(time: 10))
+    init() {
+        self.timerConfig = TimerConfig(time: 1)
     }
     
     init(timerConfig: TimerConfig) {
@@ -31,6 +31,7 @@ class TimerViewModel: ObservableObject {
     }
     
     func updateTimerConfig(timerConfig: TimerConfig) {
+        self.resetTimer()
         self.timerConfig = timerConfig
         self.update()
     }
@@ -48,6 +49,9 @@ class TimerViewModel: ObservableObject {
     }
     
     func update() {
+        guard let timerConfig = timerConfig else {
+            return
+        }
         if let timerSession = timerSession {
             displayString = timerSession.displayString()
             subSecondDisplayString = timerSession.subSecondDisplayString()
@@ -81,6 +85,10 @@ class TimerViewModel: ObservableObject {
     }
     
     func startTimer() {
+        guard let timerConfig = timerConfig else {
+            return
+        }
+
         let timerSession = TimerSession(time: timerConfig.time)
         timerSession.resumeTimer()
         self.timerSession = timerSession

@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-   
+    // Persistent timer view model
+    @StateObject var timerViewModel: TimerViewModel = TimerViewModel()
+
     var body: some View {
         NavigationView {
-            TimerEditView()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Timer")
+            TimerListView()
+                .environmentObject(timerViewModel)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("Timer")
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink (destination: TimerEditView().environmentObject(timerViewModel)) {
+                            Text("+")
+                        }
+                    }
                 }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    NavigationLink (destination: TimerEditView()) {
-//                        Text("+")
-//                    }
-//                }
-            }
         }
     }
 }
