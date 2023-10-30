@@ -12,7 +12,7 @@ struct TimerListItemView: View {
 
     var body: some View {
         Text(viewModel.displayString)
-            .font(Font.custom("DigitaldreamNarrow", size: 30, relativeTo: .title))
+            .font(Font.custom("DigitaldreamNarrow", size: 24, relativeTo: .title))
     }
 }
 

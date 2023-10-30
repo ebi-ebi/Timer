@@ -29,7 +29,7 @@ struct TimerSessionView: View {
                 .animation(.linear.repeatCount(timerViewModel.timerEnded ? 3 : 1), value: timerViewModel.timerEnded)
                 .ignoresSafeArea()
             VStack {
-                TimerCountDownText(viewModel: timerViewModel)
+                TimerCountDownText(timerViewModel: timerViewModel)
                 HStack {
                     Button(action:{
                         timerViewModel.toggleTimer()
@@ -49,9 +49,13 @@ struct TimerSessionView: View {
                 .padding()
             }
         }.onAppear {
+            timerViewModel.shouldShowPersistingTimerInView(false)
             if let timerConfig = timerConfig {
                 timerViewModel.updateTimerConfig(timerConfig: timerConfig)
+                timerViewModel.startTimer()
             }
+        }.onDisappear {
+            timerViewModel.shouldShowPersistingTimerInView(true)
         }
     }
 }

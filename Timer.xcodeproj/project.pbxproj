@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28351A9B2AEF27FC005B42D5 /* TimerPersistingDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28351A9A2AEF27FC005B42D5 /* TimerPersistingDisplayView.swift */; };
 		28450B5F2ADC572200277BFC /* lcd14.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28450B5E2ADC572200277BFC /* lcd14.otf */; };
 		28450B612ADC5D9A00277BFC /* DigitaldreamNarrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28450B602ADC5D9900277BFC /* DigitaldreamNarrow.ttf */; };
 		28BCAD1E2AC62AFA0011EAE2 /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCAD1D2AC62AFA0011EAE2 /* TimerApp.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28351A9A2AEF27FC005B42D5 /* TimerPersistingDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPersistingDisplayView.swift; sourceTree = "<group>"; };
 		28450B5E2ADC572200277BFC /* lcd14.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcd14.otf; sourceTree = "<group>"; };
 		28450B602ADC5D9900277BFC /* DigitaldreamNarrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DigitaldreamNarrow.ttf; sourceTree = "<group>"; };
 		28BCAD1A2AC62AFA0011EAE2 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				28BCAD4A2ACB86400011EAE2 /* TimerCountDownText.swift */,
+				28351A9A2AEF27FC005B42D5 /* TimerPersistingDisplayView.swift */,
 				28BCAD4E2ACD1DBC0011EAE2 /* TimerListView.swift */,
 				28BCAD4C2ACCE9B20011EAE2 /* TimerSessionView.swift */,
 				28BCAD5B2ACF828C0011EAE2 /* TimerEditView.swift */,
@@ -356,6 +359,7 @@
 				28C2A8972ADDD612004A9462 /* TimerListItemViewModel.swift in Sources */,
 				28BCAD5F2AD088380011EAE2 /* TimerNotificationManager.swift in Sources */,
 				28BCAD4B2ACB86400011EAE2 /* TimerCountDownText.swift in Sources */,
+				28351A9B2AEF27FC005B42D5 /* TimerPersistingDisplayView.swift in Sources */,
 				28BCAD1E2AC62AFA0011EAE2 /* TimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

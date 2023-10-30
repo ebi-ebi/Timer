@@ -35,7 +35,7 @@ struct TimerHelper {
         return String(format: "%03.0f", subsecond * 1000)
     }
     
-    static func getQuickTimeOptions() -> [TimerConfig] {
+    static func getQuickTimeOptions() -> [TimeInterval] {
         var currentTime = 0
         var options: [Int] = Array()
         
@@ -45,8 +45,8 @@ struct TimerHelper {
                 options.append(currentTime)
             }
         }
-        return options.map { option -> TimerConfig in
-            TimerConfig(time: Double(option))
+        return options.map { option -> TimeInterval in
+            Double(option)
         }
     }
 }

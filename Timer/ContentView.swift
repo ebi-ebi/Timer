@@ -12,19 +12,22 @@ struct ContentView: View {
     @StateObject var timerViewModel: TimerViewModel = TimerViewModel()
 
     var body: some View {
-        NavigationView {
-            TimerListView()
-                .environmentObject(timerViewModel)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Text("Timer")
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink (destination: TimerEditView().environmentObject(timerViewModel)) {
-                            Text("+")
+        ZStack {
+            NavigationView {
+                TimerListView()
+                    .environmentObject(timerViewModel)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Text("Timer")
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            NavigationLink (destination: TimerEditView().environmentObject(timerViewModel)) {
+                                Text("+")
+                            }
                         }
                     }
-                }
+            }.ignoresSafeArea()
+            TimerPersistingDisplayView(timerViewModel: timerViewModel)
         }
     }
 }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct TimerCountDownText: View {
-    @ObservedObject var viewModel: TimerViewModel
+    @ObservedObject var timerViewModel: TimerViewModel
 
     var body: some View {
         HStack(alignment: .top) {
-            Text(viewModel.displayString)
+            Text(timerViewModel.displayString)
                 .font(Font.custom("DigitaldreamNarrow", size: 50, relativeTo: .largeTitle))
-            Text(viewModel.subSecondDisplayString)
+            Text(timerViewModel.subSecondDisplayString)
                 .font(Font.custom("DigitaldreamNarrow", size: 30, relativeTo: .title3))
         }
     }
 }
 
 #Preview {
-    TimerCountDownText(viewModel: TimerViewModel())
+    TimerCountDownText(timerViewModel: TimerViewModel())
 }

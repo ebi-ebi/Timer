@@ -16,7 +16,10 @@ class TimerViewModel: ObservableObject {
     @Published var resetString: String = "Reset"
     // This flips only when the timer ends
     @Published var timerEnded: Bool = false
+    // When a TimerSession exist and view stack decides to show persisting timer
+    @Published var showPersistingTimer: Bool = false
     
+    var showPersistingTimerInView: Bool = false
     var timerConfig: TimerConfig?
     var timerSession: TimerSession?
     var updateTimer: Timer? = nil
@@ -36,19 +39,19 @@ class TimerViewModel: ObservableObject {
         self.update()
     }
     
-    func startUpdate() {
+    private func startUpdate() {
         // Start update timer
         updateTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
             self?.update()
         }
     }
     
-    func stopUpdate() {
+    private func stopUpdate() {
         updateTimer?.invalidate()
         updateTimer = nil
     }
     
-    func update() {
+    private func update() {
         guard let timerConfig = timerConfig else {
             return
         }
@@ -65,6 +68,20 @@ class TimerViewModel: ObservableObject {
             subSecondDisplayString = ""
             toggleString = "Start"
         }
+    }
+    
+    private func setupNotification(after time: TimeInterval) {
+        TimerNotificationManager.currentManager().sendNotification(title: "Timer complete", body: "", duration: time)
+    }
+
+    // Persistent Timer View
+    func shouldShowPersistingTimerInView(_ showInView: Bool) {
+        showPersistingTimerInView = showInView
+        updateShowPersistingTimer()
+    }
+    
+    private func updateShowPersistingTimer() {
+        showPersistingTimer = showPersistingTimerInView && timerSession != nil
     }
     
     // Timer functions
@@ -93,6 +110,8 @@ class TimerViewModel: ObservableObject {
         timerSession.resumeTimer()
         self.timerSession = timerSession
 
+        updateShowPersistingTimer()
+        
         setupNotification(after: timerSession.timeRemaining)
 
         toggleString = "Pause"
@@ -100,16 +119,6 @@ class TimerViewModel: ObservableObject {
         startUpdate()
     }
     
-    func resetTimer() {
-        timerSession = nil
-        timerEnded = false
-        
-        stopUpdate()
-        update()
-    }
-
-    // TODO
-
     func pauseTimer() {
         timerSession?.pause()
 
@@ -128,8 +137,17 @@ class TimerViewModel: ObservableObject {
         }
     }
     
-    func setupNotification(after time: TimeInterval) {
-        TimerNotificationManager.currentManager().sendNotification(title: "Timer complete", body: "", duration: time)
+    func resetTimer() {
+        timerSession = nil
+        timerEnded = false
+        
+        stopUpdate()
+
+        updateShowPersistingTimer()
+
+        TimerNotificationManager.currentManager().cancelNotification()
+
+        update()
     }
 }
 
