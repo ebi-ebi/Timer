@@ -20,22 +20,22 @@ class TimerViewModel: ObservableObject {
     @Published var showPersistingTimer: Bool = false
     
     var showPersistingTimerInView: Bool = false
-    var timerConfig: TimerConfig?
+    var timeDuration: TimeInterval?
     var timerSession: TimerSession?
     var updateTimer: Timer? = nil
     
     init() {
-        self.timerConfig = TimerConfig(time: 1)
+        self.timeDuration = 1
     }
     
-    init(timerConfig: TimerConfig) {
-        self.timerConfig = timerConfig
+    init(timeDuration: TimeInterval) {
+        self.timeDuration = timeDuration
         self.update()
     }
     
-    func updateTimerConfig(timerConfig: TimerConfig) {
+    func updateTimeDuration(timeDuration: TimeInterval) {
         self.resetTimer()
-        self.timerConfig = timerConfig
+        self.timeDuration = timeDuration
         self.update()
     }
     
@@ -52,7 +52,7 @@ class TimerViewModel: ObservableObject {
     }
     
     private func update() {
-        guard let timerConfig = timerConfig else {
+        guard let timeDuration = timeDuration else {
             return
         }
         if let timerSession = timerSession {
@@ -64,7 +64,7 @@ class TimerViewModel: ObservableObject {
                 stopUpdate()
             }
         } else {
-            displayString = TimerHelper.formatDisplayStringForSeconds(timerConfig.time)
+            displayString = TimerHelper.formatDisplayStringForSeconds(timeDuration)
             subSecondDisplayString = ""
             toggleString = "Start"
         }
@@ -102,11 +102,11 @@ class TimerViewModel: ObservableObject {
     }
     
     func startTimer() {
-        guard let timerConfig = timerConfig else {
+        guard let timeDuration = timeDuration else {
             return
         }
 
-        let timerSession = TimerSession(time: timerConfig.time)
+        let timerSession = TimerSession(time: timeDuration)
         timerSession.resumeTimer()
         self.timerSession = timerSession
 

@@ -22,6 +22,9 @@ struct TimerNotificationManager {
     }
     
     func sendNotification(title:String, body:String, duration: TimeInterval) {
+        guard TimerConfig.currentConfig().notificationEnabled() else {
+            return
+        }
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
@@ -38,11 +41,17 @@ struct TimerNotificationManager {
     }
     
     func cancelNotification() {
+        guard TimerConfig.currentConfig().notificationEnabled() else {
+            return
+        }
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removeAllPendingNotificationRequests()
     }
     
     func requestForAuthorization() {
+        guard TimerConfig.currentConfig().notificationEnabled() else {
+            return
+        }
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.requestAuthorization(options: [.alert, .sound]) { _, _ in
             

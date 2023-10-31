@@ -9,22 +9,22 @@ import SwiftUI
 
 struct TimerSessionView: View {
     @EnvironmentObject var timerViewModel: TimerViewModel
-    let timerConfig: TimerConfig?
+    let timeDuration: TimeInterval?
     
     init() {
-        self.timerConfig = nil
+        self.timeDuration = nil
     }
     
     // Use this intializer to update timerViewModel config onAppear
-    init(timerConfig: TimerConfig) {
-        self.timerConfig = timerConfig
+    init(timeDuration: TimeInterval) {
+        self.timeDuration = timeDuration
     }
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [Color("TimerSessionBackground1"), Color("TimerSessionBackground2")]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            LinearGradient(gradient: Gradient(colors: [.gray, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [Color("TimerSessionBackground2"), Color("TimerSessionBackground1")]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .opacity(timerViewModel.timerEnded ? 1 : 0)
                 .animation(.linear.repeatCount(timerViewModel.timerEnded ? 3 : 1), value: timerViewModel.timerEnded)
                 .ignoresSafeArea()
@@ -50,8 +50,8 @@ struct TimerSessionView: View {
             }
         }.onAppear {
             timerViewModel.shouldShowPersistingTimerInView(false)
-            if let timerConfig = timerConfig {
-                timerViewModel.updateTimerConfig(timerConfig: timerConfig)
+            if let timeDuration = timeDuration {
+                timerViewModel.updateTimeDuration(timeDuration: timeDuration)
                 timerViewModel.startTimer()
             }
         }.onDisappear {
@@ -61,5 +61,5 @@ struct TimerSessionView: View {
 }
 
 #Preview {
-    TimerSessionView().environmentObject(TimerViewModel(timerConfig: TimerConfig(time: 10)))
+    TimerSessionView().environmentObject(TimerViewModel(timeDuration: 10))
 }

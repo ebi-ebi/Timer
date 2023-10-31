@@ -26,7 +26,7 @@ struct TimerEditView: View {
     }
     
     func timerSessionView() -> some View {
-        return TimerSessionView(timerConfig: TimerConfig(time:duration()))
+        return TimerSessionView(timeDuration: duration())
             .environmentObject(timerViewModel)
     }
     

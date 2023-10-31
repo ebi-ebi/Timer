@@ -10,14 +10,14 @@ import Foundation
 class TimerListItemViewModel: ObservableObject {
     @Published var displayString: String
 
-    var timerConfig: TimerConfig
+    var timeDuration: TimeInterval
 
     convenience init() {
-        self.init(timerConfig: TimerConfig(time: 10))
+        self.init(timeDuration: 10)
     }
     
-    init(timerConfig: TimerConfig) {
-        self.timerConfig = timerConfig
-        self.displayString = TimerHelper.formatDisplayStringForSeconds(timerConfig.time)
+    init(timeDuration: TimeInterval) {
+        self.timeDuration = timeDuration
+        self.displayString = TimerHelper.formatDisplayStringForSeconds(timeDuration)
     }
 }

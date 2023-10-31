@@ -36,5 +36,5 @@ struct TimerPersistingDisplayView: View {
 }
 
 #Preview {
-    TimerPersistingDisplayView(timerViewModel: TimerViewModel(timerConfig: TimerConfig(time: 10)))
+    TimerPersistingDisplayView(timerViewModel: TimerViewModel(timeDuration: 10))
 }
