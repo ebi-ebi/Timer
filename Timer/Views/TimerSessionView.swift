@@ -37,6 +37,7 @@ struct TimerSessionView: View {
                         Text(timerViewModel.toggleString)
                     }
                     .buttonStyle(.borderedProminent)
+                    .disabled(timerViewModel.timerEnded)
                     .padding()
                     Button(action:{
                         timerViewModel.resetTimer()

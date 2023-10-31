@@ -12,7 +12,6 @@ class TimerViewModel: ObservableObject {
     @Published var displayString: String = ""
     @Published var subSecondDisplayString: String = ""
     @Published var toggleString: String = "Start"
-    @Published var stopString: String = "Stop"
     @Published var resetString: String = "Reset"
     // This flips only when the timer ends
     @Published var timerEnded: Bool = false

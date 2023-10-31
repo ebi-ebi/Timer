@@ -8,7 +8,5 @@ Simple Countdown Timer app with following features
 - A retro look LCD text
 
 TODO:
-- Better dark mode support
-- Faster countdown time selection interface
 - History of previous time selected for quick selection
 - Enabling different skin to be selected in a setting page

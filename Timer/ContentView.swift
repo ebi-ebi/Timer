@@ -22,7 +22,7 @@ struct ContentView: View {
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             NavigationLink (destination: TimerEditView().environmentObject(timerViewModel)) {
-                                Text("+")
+                                Text("...")
                             }
                         }
                     }
